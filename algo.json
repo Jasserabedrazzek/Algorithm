@@ -1,7 +1,7 @@
 {
     "Algorithms" : {
         "lire": "input \n a = input('-> ')"  ,
-        "ecrire" : "print()\nprint('Hello , World!')"  ,
+        "ecrire" : "print()\n#exe:\nprint('Hello , World!')"  ,
         "<-" : "= \nnum = 19",
         "" : "= \nnum = 19",
         "alore" : ":\nif a>=b :\n\tprint(a)" ,
