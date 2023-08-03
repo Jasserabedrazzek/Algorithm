@@ -20,9 +20,9 @@ st.write(p)
 # Load the JSON data
 with open("algo.json", "r") as f:
     algorithm_data = json.load(f)
-
+initial = "ecrire"
 # Algorithm
-user_input = st.text_input("Algorithm")
+user_input = st.text_input("Algorithm : ", initial)
 
 # Function to find the closest matching words
 def find_closest_word(user_input, algorithm_data):
@@ -52,7 +52,7 @@ st.markdown("[learn Qt Designer](#soon)")
 st.write("---")
 col1,col2 = st.columns([2,5])
 with col2 :
-    st.write(f" users who visit web : {user}")
+    st.write(f" users who used web : {user}")
     st.write(":copyright:2023 by Algorithm.ai | DevTunisian")
 
 col4,col3 = st.columns([3,7])
