@@ -6,7 +6,7 @@ import json
 from random import randint
 
 st.set_page_config(
-    page_title="English Irregular Verbs | DevTunisian",
+    page_title="Irregular Verbs | DevTunisian",
     page_icon=":bookmark_tabs:",
     layout="centered"
 )
@@ -16,16 +16,9 @@ def find_close_matches(verb, data):
     close_matches = process.extract(verb, verb_choices, scorer=fuzz.partial_ratio, limit=5)
     return [match[0] for match in close_matches]
 
-def comments(user):
-    id = randint(1000000, 99999999)
-    with open("comts.json", "r") as file:
-        data = json.load(file)
 
-    new_entry = {'userId': id, 'comments': user}
-    data.append(new_entry)
 
-    with open("comts.json", "w") as file:
-        json.dump(data, file, indent=4)
+
 
 def translate_with_error_handling(text, src='en', dest='ar'):
     try:
@@ -99,10 +92,6 @@ def main():
     st.dataframe(df, width=table_width, height=3012)
 
     st.write("Free Research Preview. [Irregular Verbs Table August 3 Version](#).")
-    st.write("---")
-    comment = st.text_area("comments")
-    if st.button('submit'):
-        comments(comment)
 
 if __name__ == "__main__":
     main()
