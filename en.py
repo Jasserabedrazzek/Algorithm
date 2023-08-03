@@ -2,21 +2,45 @@ import streamlit as st
 import pandas as pd
 from fuzzywuzzy import fuzz, process
 from googletrans import Translator
-import json
 from random import randint
+import sqlite3
 
 st.set_page_config(
-    page_title="Irregular Verbs | DevTunisian",
+    page_title="English Irregular Verbs | DevTunisian",
     page_icon=":bookmark_tabs:",
     layout="centered"
 )
+
 
 def find_close_matches(verb, data):
     verb_choices = data['Infinitive']
     close_matches = process.extract(verb, verb_choices, scorer=fuzz.partial_ratio, limit=5)
     return [match[0] for match in close_matches]
 
+def init_comments_table():
+    conn = sqlite3.connect('comments.db')
+    c = conn.cursor()
+    c.execute('''CREATE TABLE IF NOT EXISTS comments (
+                    id INTEGER PRIMARY KEY,
+                    comment TEXT
+                )''')
+    conn.commit()
+    conn.close()
 
+def insert_comment(comment):
+    conn = sqlite3.connect('comments.db')
+    c = conn.cursor()
+    c.execute("INSERT INTO comments (comment) VALUES (?)", (comment,))
+    conn.commit()
+    conn.close()
+
+def fetch_comments():
+    conn = sqlite3.connect('comments.db')
+    c = conn.cursor()
+    c.execute("SELECT * FROM comments")
+    comments = c.fetchall()
+    conn.close()
+    return comments
 
 
 
@@ -31,6 +55,7 @@ def translate_with_error_handling(text, src='en', dest='ar'):
         return f"Translation Error: {e}"
 
 def main():
+    init_comments_table()
     st.title("English Irregular Verbs Table")
     st.info(":point_left: Open Sidebar for search verb and translate")
     st.sidebar.title("English Irregular Verbs, search and translate. ")
@@ -66,14 +91,10 @@ def main():
 
             # Translate verb forms with error handling
             verb_translated = translate_with_error_handling(verb, src='en', dest='ar')
-            simple_past_translated = translate_with_error_handling(simple_past, src='en', dest='ar')
-            past_participle_translated = translate_with_error_handling(past_participle, src='en', dest='ar')
         else:
             simple_past = "Not found"
             past_participle = "Not found"
             verb_translated = "Not found"
-            simple_past_translated = "Not found"
-            past_participle_translated = "Not found"
             st.sidebar.write("No matches found for the entered verb.")
 
     st.sidebar.write('---')
@@ -92,6 +113,22 @@ def main():
     st.dataframe(df, width=table_width, height=3012)
 
     st.write("Free Research Preview. [Irregular Verbs Table August 3 Version](#).")
+    st.write("---")
+    st.title('# Comments :')
+    comment = st.text_area("Comment :", "", height=150)
+
+    if st.button('submit'):
+        st.info(comment)
+        insert_comment(comment)
+
+    # Fetch old comments from the database
+    old_comments = fetch_comments()
+
+    # Display old comments
+    if old_comments:
+        st.write("Old Comments:")
+        for i, old_comment in enumerate(old_comments):
+            st.info(f"Comment {i+1}: {old_comment[1]}")
 
 if __name__ == "__main__":
     main()
