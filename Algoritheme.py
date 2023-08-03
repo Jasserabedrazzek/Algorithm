@@ -52,7 +52,6 @@ st.markdown("[learn Qt Designer](#soon)")
 st.write("---")
 col1,col2 = st.columns([2,5])
 with col2 :
-    st.write(f" users who used web : {user}")
     st.write(":copyright:2023 by Algorithm.ai | DevTunisian")
 
 col4,col3 = st.columns([3,7])
