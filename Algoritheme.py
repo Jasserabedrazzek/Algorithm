@@ -54,7 +54,7 @@ def get_example(user_input, definition):
 
 def main():
     # Algorithm
-    user_input = st.text_input("Algorithm:", initial)
+    user_input = st.text_input("Algorithm:", initial).lower()
 
     # Check if user input matches any algorithm key exactly
     if user_input in algorithm_data["Algorithms"]:
