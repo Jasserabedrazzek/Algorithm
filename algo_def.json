@@ -7,6 +7,8 @@
         "alore": "#exe:\nif a >= b :\n\tprint(a)",
         "si": "#exe:\na >= b :\n\tprint(b)",
         "valeur()": "#exe:\nn = int(input('donner un entier :')) # int:entier\nr = float(input('donner un reel :')) # float:reel",
+        "entier": "#exe:\nn = int(input('donner un entier :')) # int:entier",
+        "valeur": "#exe:\nn = int(input('donner un entier :')) # int:entier\nr = float(input('donner un reel :')) # float:reel",
         "entier()": "#exe:\nn = int(input('donner un entier :')) # int:entier",
         "reel": "#exe:\nr = float(input('donner un reel :')) # float:reel",
         "chaine de caracteres": "#exe:\nch = input('Entrer une chaine de caracteres : ')",

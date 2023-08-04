@@ -35,49 +35,48 @@ def find_closest_word(user_input, algorithm_data):
         if similarity > max_similarity:
             closest_word = word
             max_similarity = similarity
+    
 
     return closest_word, max_similarity
 
 
 # Function to get examples
 def get_example(user_input, definition):
-    if user_input in definition["Algorithms_exe"]:
-        return definition["Algorithms_exe"][user_input]
+    max_similarity_exe = 0
+    closest_word_exe = None
 
-    # Find the closest matching word
-    closest_word, similarity_score = find_closest_word(user_input, definition["Algorithms_exe"])
-    if closest_word and similarity_score > 60:  # Set a threshold for similarity score
-        return definition["Algorithms_exe"][closest_word]
+    for word2 in definition["Algorithms_exe"]:
+        similarity = fuzz.ratio(user_input.lower(), word2.lower())
+        if similarity > max_similarity_exe:
+            closest_word_exe = word2
+            max_similarity_exe = similarity
+    
 
-    return ""
+    return closest_word_exe, max_similarity_exe
 
 
 def main():
     # Algorithm
-    user_input = st.text_input("Algorithm:", initial).lower()
+    user_input = st.text_input("Algorithm:", initial)
 
     # Check if user input matches any algorithm key exactly
-    if user_input in algorithm_data["Algorithms"]:
+    if user_input in algorithm_data["Algorithms"] and user_input in definition["Algorithms_exe"]:
         st.code(algorithm_data["Algorithms"][user_input])
-        example = get_example(user_input, definition)
-        if example:
-            st.write("Example:")
-            st.code(example)
+        st.write("Example:")
+        st.code(definition["Algorithms_exe"][user_input])
     else:
         # Find the closest matching word
         closest_word, similarity_score = find_closest_word(user_input, algorithm_data)
-        if closest_word and similarity_score > 60:  # Set a threshold for similarity score
+        closest_word_exe, max_similarity_exe = get_example(user_input, definition)
+        if closest_word and similarity_score or closest_word_exe and max_similarity_exe > 60 :  
             st.info(f"Did you mean '{closest_word}'? (Similarity: {similarity_score}%)")
             st.code(algorithm_data["Algorithms"][closest_word])
-            example = get_example(closest_word, definition)
-            if example:
-                st.write("Example:")
-                st.code(example)
+            st.code(definition["Algorithms_exe"][closest_word_exe])
         else:
             st.warning("Algorithm not found. Please try a different input.")
     
     st.markdown("[Learn Qt Designer](#soon)")
-    st.write("Free Research Preview. [Algorithm.ai August 3 Version](#).")
+    st.write("Free Research Preview. [Algorithm.ai August 4 Version](#).")
     st.write("---")
     col1, col2 = st.columns([2, 5])
     with col2:
