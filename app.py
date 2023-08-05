@@ -311,8 +311,8 @@ def main():
     
     st.sidebar.markdown("[Learn Qt Designer](#soon)")
     st.write("Free Research Preview. [Algorithm.ai August 6 Version](#).")
-    st.sidebar.write("---")
-    col1, col2 = st.sidebar.columns([2, 5])
+    st.write("---")
+    col1, col2 = st.columns([2, 5])
     with col2:
 
         st.write(":copyright:2023 by Algorithm.ai | DevTunisian")
