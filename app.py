@@ -316,9 +316,6 @@ def main():
     algortitheme()
     st.sidebar.write("New version")
     st.sidebar.write("added : tableau avec sous programme")
-    Try = st.sidebar.button("Try")
-    if Try:
-        algortitheme("tableau avec sous programme")
     st.sidebar.write("added : boucle pour")
     st.sidebar.write("added :sous programme")
     st.sidebar.write("added :test code")
