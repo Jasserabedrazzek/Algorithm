@@ -120,6 +120,9 @@ def main():
                 st.code("bacmath")
     else:
         # Find the closest matching word
+        if user_input == "":
+            user_input= 'lire()'
+        
         closest_word, similarity_score = find_closest_word(user_input, algorithm_data)
         closest_word_exe, max_similarity_exe = get_example(user_input, definition)
         if closest_word and similarity_score or closest_word_exe and max_similarity_exe > 60 :  
