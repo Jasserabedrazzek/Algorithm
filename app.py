@@ -60,6 +60,7 @@ def get_example(user_input, definition):
     return closest_word_exe, max_similarity_exe
 
 def algortitheme(user_input):
+    user_input = st.chat_input("algorithm :","lire()")
     if user_input :
     # Check if user input matches any algorithm key exactly
         if user_input in algorithm_data["Algorithms"] and user_input in definition["Algorithms_exe"]:
@@ -302,8 +303,8 @@ def algortitheme(user_input):
         st.chat_message("assistant").write("Hi, Can'I Help You ?")
 def main():
     # Algorithm
-    user_input = st.chat_input("algorithm :")
-    algortitheme(user_input)
+    
+    algortitheme()
     
         
     
