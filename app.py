@@ -32,32 +32,38 @@ initial = "ecrire()"
 
 # Function to find the closest matching words
 def find_closest_word(user_input, algorithm_data):
-    max_similarity = 0
-    closest_word = None
+    if user_input :
+        max_similarity = 0
+        closest_word = None
 
-    for word in algorithm_data["Algorithms"]:
-        similarity = fuzz.ratio(user_input.lower(), word.lower())
-        if similarity > max_similarity:
-            closest_word = word
-            max_similarity = similarity
+        for word in algorithm_data["Algorithms"]:
+            similarity = fuzz.ratio(user_input.lower(), word.lower())
+            if similarity > max_similarity:
+                closest_word = word
+                max_similarity = similarity
     
 
-    return closest_word, max_similarity
+        return closest_word, max_similarity
+    else:
+        return ""
 
 
 # Function to get examples
 def get_example(user_input, definition):
-    max_similarity_exe = 0
-    closest_word_exe = None
+    if user_input:
+        max_similarity_exe = 0
+        closest_word_exe = None
 
-    for word2 in definition["Algorithms_exe"]:
-        similarity = fuzz.ratio(user_input.lower(), word2.lower())
-        if similarity > max_similarity_exe:
-            closest_word_exe = word2
-            max_similarity_exe = similarity
+        for word2 in definition["Algorithms_exe"]:
+            similarity = fuzz.ratio(user_input.lower(), word2.lower())
+            if similarity > max_similarity_exe:
+                closest_word_exe = word2
+                max_similarity_exe = similarity
     
 
-    return closest_word_exe, max_similarity_exe
+        return closest_word_exe, max_similarity_exe
+    else:
+        return ""
 
 def algortitheme():
         user_input = st.chat_input("algorithm :")
