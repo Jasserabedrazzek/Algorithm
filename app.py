@@ -63,7 +63,7 @@ def main():
     # Algorithm
     user_input = st.chat_input("Say something")
 
-    if user_input != "" and user_input != "                   ":
+    if user_input :
     # Check if user input matches any algorithm key exactly
         if user_input in algorithm_data["Algorithms"] and user_input in definition["Algorithms_exe"]:
             st.code(algorithm_data["Algorithms"][user_input])
