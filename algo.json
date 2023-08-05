@@ -4,11 +4,12 @@
         "ecrire()" : "print()"  ,
         "<-" : "=",
         "" : "=",
-        "alore" : ":" ,
+        "alors" : ":" ,
+        "faire" : ":" ,
         "si" : "if",
         "valeur" : "float or int",
-        "entier()" : "int()",
         "entier" : "int()",
+        "entier()" : "int()",
         "reél" : "float()",
         "reel" : "float()",
         "chaîne de caractères" : "string",
@@ -34,7 +35,7 @@
         "abs" : "abs(x)",
         "arrandi" : "round(x)",
         "alea" : "randint(i,f)" ,
-        "reccine" : "sqrt(x)",
+        "racine" : "sqrt(x)",
         "long": "len(Ch)",
         "pos" : "find()",
         "sous chaine" : "ch[d , f]",
@@ -46,12 +47,15 @@
         "tableau" : "import numpy as np \nnom_tableau = np.array([Type_element()] * N )   #N entier"  ,
         "boucle pour" : "for i in range(N)",
         "pour" : "for i in range(N)",
+        "pour i de vi a vf faire" : "for i in range(N)",
         "repeter": "while condition:\n\ttrait ",
         "tant que" : "while condition:\n\ttrait ",
         "jusqu'a" : "",
-        "fonction" : "def nom_fonction():\ntrait\nreturn",
+        "fonction" : "def nom_fonction():\n\ttrait\n\treturn",
         "retourner" : "return",
-        "procedeur" : "def nom_procedeur():\ntrait"
+        "procedeur" : "def nom_procedeur():\ntrait",
+        "tableau avec sous programme" :"look example ",
+        "sous programme" : "fonction ou procedeur"
         
     }
 }
