@@ -303,10 +303,8 @@ def algortitheme(user_input):
 def main():
     # Algorithm
     user_input = st.chat_input("algorithm :")
-    if user_input:
-        algortitheme(user_input)
-    else:    
-        pass
+    algortitheme(user_input)
+    
         
     
     st.sidebar.markdown("[Learn Qt Designer](#soon)")
