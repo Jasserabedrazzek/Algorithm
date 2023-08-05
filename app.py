@@ -69,7 +69,6 @@ def main():
             st.chat_message("assistant").write(f'{user_input} in python : {algorithm_data["Algorithms"][user_input]}')
             st.write("Example:")
             st.code(definition["Algorithms_exe"][user_input])
-            st.chat_message("assistant").write(f'Example:\n{definition["Algorithms_exe"][user_input]}')
             st.write("---")
             st.write("Test Code")
             if user_input == 'lire()' :
