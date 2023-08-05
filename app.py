@@ -306,11 +306,7 @@ def main():
     if user_input:
         algortitheme(user_input)
     else:    
-        if st.button("Numpy dans Thonny"):
-            st.info("Comment télécharger la librairie NumPy dans Thonny ?")
-            for i in range(1,7):
-                st.write(f"step{i} :")
-                st.image('step'+str(i)+'.png')
+        pass
         
     st.write("---")
     st.markdown("[Learn Qt Designer](#soon)")
