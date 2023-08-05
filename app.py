@@ -103,10 +103,10 @@ def main():
                     try:
                         n = int(N)
                         if st.button("Run code"): st.code(f'{n}')
-                        except:
-                            if N.isnumeric()== False:
-                                st.error('donner un entier!')
-                            else:
+                    except:
+                        if N.isnumeric()== False:
+                            st.error('donner un entier!')
+                        else:
                             st.error('donner une valeur!')
             elif user_input == 'reel'  : 
                 R = (st.text_input("donner un reel :"))
