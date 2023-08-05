@@ -45,7 +45,7 @@ def find_closest_word(user_input, algorithm_data):
 
         return closest_word, max_similarity
     else:
-        closest_word = "lire()"
+        closest_word = "tableau avec sous programme"
         max_similarity = 100
         return closest_word, max_similarity
 
@@ -65,7 +65,7 @@ def get_example(user_input, definition):
 
         return closest_word_exe, max_similarity_exe
     else:
-        closest_word_exe = "lire()"
+        closest_word_exe = "tableau avec sous programme"
         max_similarity_exe = 100
         return closest_word_exe, max_similarity_exe
 
@@ -314,6 +314,14 @@ def main():
     # Algorithm
     
     algortitheme()
+    st.sidebar.write("New version")
+    st.sidebar.write("added : tableau avec sous programme")
+    Try = st.sidebar.button("Try")
+    if Try:
+        algortitheme("tableau avec sous programme")
+    st.sidebar.write("added : boucle pour")
+    st.sidebar.write("added :sous programme")
+    st.sidebar.write("added :test code")
     
         
     
