@@ -77,7 +77,57 @@ def algortitheme():
             st.code(algorithm_data["Algorithms"][user_input])
             st.write("Example:")
             st.code(definition["Algorithms_exe"][user_input])
-            
+            if user_input == 'ecrire()':
+                    
+                        st.code("Hello , World!")
+            elif user_input == '<-' :
+                    
+                        st.code("19")
+            elif user_input == 'alors' or user_input == 'si' :
+                    st.code(19)
+                
+                
+                
+            elif user_input == 'afficher':
+                    
+                        st.code("bacmath")
+            elif user_input == "racine":
+                     
+                        st.code(sqrt(16))
+            elif user_input == "alea":
+                    rn5 = randint(1,10)
+                      
+                    st.code(rn5)
+            elif user_input == "long":
+                    
+                        st.code(len("Bac Math"))
+            elif user_input == "pos":
+                    
+                        st.code('bac'.find('a'))
+            if user_input == "effacer":
+                    
+                        st.code("bcmath") 
+            if user_input == "sous chaine":
+                    
+                        st.code("bac math"[0:3])
+            if user_input == "majus":
+                    
+                        st.code('bac'.upper())
+                
+            if user_input == "pour" or user_input == "boucle pour":
+                    
+                        for i in range(3):
+                            st.code(f"i = {i}")
+            if user_input == "repeter" or user_input == "tant que":
+                    
+                        st.code(5)
+            if user_input == "fonction":
+                        st.code(2)
+            if user_input == "procedeur":
+                    
+                        st.code("Python")
+                
+                            
 
         else:
             # Find the closest matching word
@@ -88,7 +138,58 @@ def algortitheme():
                 st.code(algorithm_data["Algorithms"][closest_word])
                 st.code(definition["Algorithms_exe"][closest_word_exe])
                 
-            
+                if closest_word == 'ecrire()':
+                    
+                        st.code("Hello , World!")
+                elif closest_word == '<-' :
+                    
+                        st.code("19")
+                elif closest_word == 'alors' or closest_word == 'si' :
+                    st.code(19)
+                
+                
+                
+                elif closest_word == 'afficher':
+                    
+                        st.code("bacmath")
+                elif closest_word == "racine":
+                     
+                        st.code(sqrt(16))
+                elif closest_word == "alea":
+                    rn5 = randint(1,10)
+                      
+                    st.code(rn5)
+                elif closest_word == "long":
+                    
+                        st.code(len("Bac Math"))
+                elif closest_word == "pos":
+                    
+                        st.code('bac'.find('a'))
+                if closest_word == "effacer":
+                    
+                        st.code("bcmath") 
+                if closest_word == "sous chaine":
+                    
+                        st.code("bac math"[0:3])
+                if closest_word == "majus":
+                    
+                        st.code('bac'.upper())
+                
+                if closest_word == "pour" or closest_word == "boucle pour":
+                    
+                        for i in range(3):
+                            st.code(f"i = {i}")
+                if closest_word == "repeter" or closest_word == "tant que":
+                    
+                        st.code(5)
+                if closest_word == "fonction":
+                        st.code(2)
+                if closest_word == "procedeur":
+                    
+                        st.code("Python")
+                
+                else:
+                    pass
             else:
                 st.warning("Algorithm not found. Please try a different input.")
     
@@ -96,10 +197,11 @@ def main():
     # Algorithm
     
     algortitheme()
-    st.sidebar.write("New version")
-    st.sidebar.write("added : tableau avec sous programme")
-    st.sidebar.write("added : boucle pour")
-    st.sidebar.write("added : sous programme")
+    st.sidebar.title("New version:")
+    st.sidebar.write(" 1 added : tableau avec sous programme")
+    st.sidebar.write(" 2 added : boucle pour")
+    st.sidebar.write(" 3 added : sous programme")
+    st.sidebar.write(" 4 added : show output")
     
         
     
@@ -127,3 +229,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
