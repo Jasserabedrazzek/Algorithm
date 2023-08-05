@@ -60,8 +60,8 @@ def get_example(user_input, definition):
     return closest_word_exe, max_similarity_exe
 
 def algortitheme():
-    user_input = st.chat_input("algorithm :")
-    if user_input :
+        user_input = st.chat_input("algorithm :")
+    
     # Check if user input matches any algorithm key exactly
         if user_input in algorithm_data["Algorithms"] and user_input in definition["Algorithms_exe"]:
             st.code(algorithm_data["Algorithms"][user_input])
@@ -299,8 +299,7 @@ def algortitheme():
                     pass
             else:
                 st.warning("Algorithm not found. Please try a different input.")
-    else:
-        st.chat_message("assistant").write("Hi, Can'I Help You ?")
+    
 def main():
     # Algorithm
     
