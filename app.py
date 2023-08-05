@@ -44,7 +44,8 @@ def find_closest_word(user_input, algorithm_data):
     
 
         return closest_word, max_similarity
-    
+    else:
+        return "lire"
 
 
 # Function to get examples
@@ -61,7 +62,8 @@ def get_example(user_input, definition):
     
 
         return closest_word_exe, max_similarity_exe
-    
+    else:
+        return "lire"
 
 def algortitheme():
         user_input = st.chat_input("algorithm :")
