@@ -306,29 +306,33 @@ def main():
     if user_input:
         algortitheme(user_input)
     else:    
-        pass
+        if st.button("Numpy dans Thonny"):
+            st.info("Comment télécharger la librairie NumPy dans Thonny ?")
+            for i in range(1,7):
+                st.write(f"step{i} :")
+                st.image('step'+str(i)+'.png')
         
-    st.write("---")
-    st.markdown("[Learn Qt Designer](#soon)")
-    st.write("Free Research Preview. [Algorithm.ai August 4 Version](#).")
-    st.write("---")
-    col1, col2 = st.columns([2, 5])
+    
+    st.sidebar.markdown("[Learn Qt Designer](#soon)")
+    st.write("Free Research Preview. [Algorithm.ai August 6 Version](#).")
+    st.sidebar.write("---")
+    col1, col2 = st.sidebar.columns([2, 5])
     with col2:
 
         st.write(":copyright:2023 by Algorithm.ai | DevTunisian")
 
-    col4, col3 = st.columns([3, 7])
-    c1, c2 = st.columns([5, 8])
+    col4, col3 = st.sidebar.columns([3, 7])
+    c1, c2 = st.sidebar.columns([5, 8])
     with col3:
-        st.write("Follow us on our social media:")
+        st.sidebar.write("Follow us on our social media:")
         with c2:
-            st.markdown("[Facebook](https://www.facebook.com/groups/6772196932792430)")
+            st.sidebar.markdown("[Facebook](https://www.facebook.com/groups/6772196932792430)")
         with c2:
-            st.markdown("[Instagram](https://www.instagram.com/jasserabedrazzek/)")
+            st.sidebar.markdown("[Instagram](https://www.instagram.com/jasserabedrazzek/)")
         with c2:
-            st.markdown("[Discord](https://discord.gg/HFtfNdFv)")
+            st.sidebar.markdown("[Discord](https://discord.gg/HFtfNdFv)")
         with c2:
-            st.markdown("[DevTunisian Web](https://devtunisian.netlify.app/)")
+            st.sidebar.markdown("[DevTunisian Web](https://devtunisian.netlify.app/)")
 
 
 if __name__ == "__main__":
