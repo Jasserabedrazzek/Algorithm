@@ -45,7 +45,7 @@ def find_closest_word(user_input, algorithm_data):
 
         return closest_word, max_similarity
     else:
-        closest_word = "lire"
+        closest_word = "lire()"
         max_similarity = 100
         return closest_word, max_similarity
 
@@ -65,7 +65,7 @@ def get_example(user_input, definition):
 
         return closest_word_exe, max_similarity_exe
     else:
-        closest_word_exe = "lire"
+        closest_word_exe = "lire()"
         max_similarity_exe = 100
         return closest_word_exe, max_similarity_exe
 
