@@ -136,7 +136,7 @@ def main():
             else:
                 st.warning("Algorithm not found. Please try a different input.")
     else:
-        st.chat_message("assistant").write("content": "How can I help you?")
+        st.chat_message("assistant").write("How can I help you?")
     
     st.markdown("[Learn Qt Designer](#soon)")
     st.write("Free Research Preview. [Algorithm.ai August 4 Version](#).")
