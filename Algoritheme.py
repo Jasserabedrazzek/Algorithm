@@ -70,128 +70,63 @@ def get_example(user_input, definition):
         return closest_word_exe, max_similarity_exe
 
 def algortitheme():
-        user_input = st.text_input("algorithm :",initial)
-    
-    # Check if user input matches any algorithm key exactly
-        if user_input in algorithm_data["Algorithms"] and user_input in definition["Algorithms_exe"]:
-            st.code(algorithm_data["Algorithms"][user_input])
-            st.write("Example:")
-            st.code(definition["Algorithms_exe"][user_input])
-            if user_input == 'ecrire()':
-                    
-                        st.code("Hello , World!")
-            elif user_input == '<-' :
-                    
-                        st.code("19")
-            elif user_input == 'alors' or user_input == 'si' :
-                    st.code(19)
-                
-                
-                
-            elif user_input == 'afficher':
-                    
-                        st.code("bacmath")
-            elif user_input == "racine":
-                     
-                        st.code(sqrt(16))
-            elif user_input == "alea":
-                    rn5 = randint(1,10)
-                      
-                    st.code(rn5)
-            elif user_input == "long":
-                    
-                        st.code(len("Bac Math"))
-            elif user_input == "pos":
-                    
-                        st.code('bac'.find('a'))
-            if user_input == "effacer":
-                    
-                        st.code("bcmath") 
-            if user_input == "sous chaine":
-                    
-                        st.code("bac math"[0:3])
-            if user_input == "majus":
-                    
-                        st.code('bac'.upper())
-                
-            if user_input == "pour" or user_input == "boucle pour":
-                    
-                        for i in range(3):
-                            st.code(f"i = {i}")
-            if user_input == "repeter" or user_input == "tant que":
-                    
-                        st.code(5)
-            if user_input == "fonction":
-                        st.code(2)
-            if user_input == "procedeur":
-                    
-                        st.code("Python")
-                
-                            
+    selected_algorithm = st.selectbox("Select an algorithm:", list(algorithm_data["Algorithms"].keys()))
 
-        else:
-            # Find the closest matching word
-            closest_word, similarity_score = find_closest_word(user_input, algorithm_data)
-            closest_word_exe, max_similarity_exe = get_example(user_input, definition)
-            if closest_word and similarity_score or closest_word_exe and max_similarity_exe > 60 :  
-                st.info(f"Did you mean '{closest_word}'?")
-                st.code(algorithm_data["Algorithms"][closest_word])
-                st.code(definition["Algorithms_exe"][closest_word_exe])
-                
-                if closest_word == 'ecrire()':
-                    
-                        st.code("Hello , World!")
-                elif closest_word == '<-' :
-                    
-                        st.code("19")
-                elif closest_word == 'alors' or closest_word == 'si' :
-                    st.code(19)
-                
-                
-                
-                elif closest_word == 'afficher':
-                    
-                        st.code("bacmath")
-                elif closest_word == "racine":
-                     
-                        st.code(sqrt(16))
-                elif closest_word == "alea":
-                    rn5 = randint(1,10)
-                      
-                    st.code(rn5)
-                elif closest_word == "long":
+    if selected_algorithm:
+        st.code(algorithm_data["Algorithms"][selected_algorithm])
+        st.write("Example:")
+        st.code(definition["Algorithms_exe"][selected_algorithm])
+        st.write("Output :")
+        # Add specific examples for certain algorithms
+        if selected_algorithm == 'ecrire()':
+            st.code("Hello , World!")
+        elif selected_algorithm == '<-':
+            st.code("19")
+        elif selected_algorithm == 'alors' or selected_algorithm == 'si':
+            st.code(19)
+        elif selected_algorithm == 'afficher':
+            st.code("bacmath")
+        elif selected_algorithm == "racine":
+            st.code(sqrt(16))
+        elif selected_algorithm == "alea":
+            rn5 = randint(1, 10)
+            st.code(rn5)
+        elif selected_algorithm == "long":
                     
                         st.code(len("Bac Math"))
-                elif closest_word == "pos":
+        elif selected_algorithm == "pos":
                     
-                        st.code('bac'.find('a'))
-                if closest_word == "effacer":
+                    st.code('bac'.find('a'))
+        elif selected_algorithm == "effacer":
                     
-                        st.code("bcmath") 
-                if closest_word == "sous chaine":
+                    st.code("bcmath") 
+        elif selected_algorithm == "sous chaine":
                     
-                        st.code("bac math"[0:3])
-                if closest_word == "majus":
+                    st.code("bac math"[0:3])
+        elif selected_algorithm == "majus":
                     
-                        st.code('bac'.upper())
-                
-                if closest_word == "pour" or closest_word == "boucle pour":
+                    st.code('bac'.upper())
+        elif selected_algorithm == "ou":
                     
-                        for i in range(3):
+                    st.code(True)
+        elif selected_algorithm == "arrondi()":
+                    
+                    st.code(round(12.5))
+        elif selected_algorithm == "abs":
+               st.code(abs(-15))
+        elif selected_algorithm == "pour" or selected_algorithm == "boucle pour":
+                    
+                    for i in range(3):
                             st.code(f"i = {i}")
-                if closest_word == "repeter" or closest_word == "tant que":
+        elif selected_algorithm == "repeter" or selected_algorithm == "tant que":
                     
                         st.code(5)
-                if closest_word == "fonction":
+        elif selected_algorithm == "fonction":
                         st.code(2)
-                if closest_word == "procedeur":
+        elif selected_algorithm == "procedeur":
                     
-                        st.code("Python")
-                
-                else:
-                    pass
-            else:
-                st.warning("Algorithm not found. Please try a different input.")
+                    st.code("Python")
+            
     
 def main():
     # Algorithm
@@ -202,6 +137,7 @@ def main():
     st.sidebar.write(" 2 added : boucle pour")
     st.sidebar.write(" 3 added : sous programme")
     st.sidebar.write(" 4 added : show output")
+    st.sidebar.write(" 5 deleted text input and add selectbox")
     
         
     
@@ -229,4 +165,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
