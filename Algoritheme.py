@@ -70,7 +70,7 @@ def get_example(user_input, definition):
         return closest_word_exe, max_similarity_exe
 
 def algortitheme():
-        user_input = st.text_input("algorithm :")
+        user_input = st.text_input("algorithm :",initial)
     
     # Check if user input matches any algorithm key exactly
         if user_input in algorithm_data["Algorithms"] and user_input in definition["Algorithms_exe"]:
