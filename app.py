@@ -209,7 +209,8 @@ def main():
     st.write("Free Research Preview. [Algorithm.ai August 6 Version](#).")
     st.write("---")
     col1, col2 = st.columns([2, 5])
-    """<iframe src="https://trinket.io/embed/python/cb60355528?runMode=console" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>"""
+    a = """<iframe src="https://trinket.io/embed/python/cb60355528?runMode=console" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>"""
+    st.markdown(body, unsafe_allow_html=False, a, help=None)
     with col2:
     
         st.write(":copyright:2023 by Algorithm.ai | DevTunisian")
