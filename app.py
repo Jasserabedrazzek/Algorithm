@@ -13,15 +13,7 @@ st.set_page_config(
 )
 
 def visitor(n):
-    with open("user.json", "r") as use:
-        usern = json.load(use)
-    num = usern["user"]
-    if n:
-        added = {"user": num+1}
-    with open("user.json", "w") as add:
-        json.dump(added, add)
-    if usern["user"] > n:
-        return usern["user"] +1         
+    pass
 
 if 'visits' not in st.session_state:
     st.session_state['visits'] = 0
@@ -44,10 +36,7 @@ with open("algo_def.json", "r") as file:
     definition = json.load(file)
 initial = "ecrire()"
 
-def title():
-    with open("title.json", "r") as files:
-        Title = json.load(files)
-        return Title["La forme generale d'un algorithme"]
+
 
 
 def find_closest_word(user_input, algorithm_data):
@@ -240,7 +229,7 @@ def main():
     st.sidebar.markdown("[Learn Qt Designer](#soon)")
     
     st.write("---")
-    st.write(f" **{visitor(user)} Total Visits website.**")
+    
     st.write("Free Research Preview. [Algorithm.ai August 6 Version](#).")
     col1, col2 = st.columns([2, 5])
     with col2:
