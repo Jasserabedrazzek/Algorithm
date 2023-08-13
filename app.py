@@ -4,33 +4,52 @@ import json
 from random import randint
 from numpy import array
 from math import sqrt
+from time import sleep
 
 st.set_page_config(
-    page_title="Algorithm to Python | DevTunisian",
+    page_title="Algorithm AI | DevTunisian",
     page_icon=":computer:",
     layout="centered"
 )
 
+def visitor(n):
+    with open("user.json", "r") as use:
+        usern = json.load(use)
+    num = usern["user"]
+    if n:
+        added = {"user": num+1}
+    with open("user.json", "w") as add:
+        json.dump(added, add)
+    if usern["user"] > n:
+        return usern["user"] +1         
+
 if 'visits' not in st.session_state:
     st.session_state['visits'] = 0
+
 
 st.session_state['visits'] += 1
 user = st.session_state['visits']
 
-            # Add other widgets or content here
-st.title("Welcome To Algorithm.ai")
-p = """The website "Algorithm.ai" is a platform that introduces users to the world of algorithms and artificial intelligence. The website aims to provide comprehensive and beginner-friendly information on algorithms, data structures, and AI concepts."""
-st.write(p)
-st.write("---")
-# Load the JSON data
+
+visitor(user)
+
+
+
+
+
+
 with open("algo.json", "r") as f:
     algorithm_data = json.load(f)
 with open("algo_def.json", "r") as file:
     definition = json.load(file)
 initial = "ecrire()"
 
+def title():
+    with open("title.json", "r") as files:
+        Title = json.load(files)
+        return Title["La forme generale d'un algorithme"]
 
-# Function to find the closest matching words
+
 def find_closest_word(user_input, algorithm_data):
     if user_input :
         max_similarity = 0
@@ -44,13 +63,8 @@ def find_closest_word(user_input, algorithm_data):
     
 
         return closest_word, max_similarity
-    else:
-        closest_word = initial
-        max_similarity = 100
-        return closest_word, max_similarity
+    
 
-
-# Function to get examples
 def get_example(user_input, definition):
     if user_input:
         max_similarity_exe = 0
@@ -64,73 +78,79 @@ def get_example(user_input, definition):
     
 
         return closest_word_exe, max_similarity_exe
-    else:
-        closest_word_exe = initial
-        max_similarity_exe = 100
-        return closest_word_exe, max_similarity_exe
-
-def algortitheme():
-        user_input = st.text_input("algorithm :",initial)
     
-    # Check if user input matches any algorithm key exactly
+
+def algortitheme(user_input):
+
+
         if user_input in algorithm_data["Algorithms"] and user_input in definition["Algorithms_exe"]:
-            st.code(algorithm_data["Algorithms"][user_input])
-            st.write("Example:")
-            st.code(definition["Algorithms_exe"][user_input])
-            if user_input == 'ecrire()':
+            with st.chat_message("user"):
+                st.write(f"Je recherche **`{user_input}`** en Python.")
+            result = algorithm_data["Algorithms"][user_input]
+            with st.chat_message('assistant'):
+                st.write(f"**`{user_input}`** en Python c'est **`{result}`** ")
+            
+                
+                st.code(definition["Algorithms_exe"][user_input])
+                st.write("**output**")
+                if user_input == 'ecrire()':
                     
                         st.code("Hello , World!")
-            elif user_input == '<-' :
+                elif user_input == '<-' :
                     
                         st.code("19")
-            elif user_input == 'alors' or user_input == 'si' :
+                elif user_input == 'alors' or user_input == 'si' :
                     st.code(19)
                 
                 
                 
-            elif user_input == 'afficher':
+                elif user_input == 'afficher':
                     
                         st.code("bacmath")
-            elif user_input == "racine":
+                elif user_input == "racine":
                      
                         st.code(sqrt(16))
-            elif user_input == "alea":
+                elif user_input == "alea":
                     rn5 = randint(1,10)
                       
                     st.code(rn5)
-            elif user_input == "long":
+                elif user_input == "long":
                     
                         st.code(len("Bac Math"))
-            elif user_input == "pos":
+                elif user_input == "ou":
+                    
+                        st.code(True)
+                elif user_input == "pos":
                     
                         st.code('bac'.find('a'))
-            if user_input == "effacer":
+                elif user_input == "effacer":
                     
                         st.code("bcmath") 
-            if user_input == "sous chaine":
+                elif user_input == "sous chaine":
                     
                         st.code("bac math"[0:3])
-            if user_input == "majus":
+                elif user_input == "majus":
                     
                         st.code('bac'.upper())
                 
-            if user_input == "pour" or user_input == "boucle pour":
+                elif user_input == "pour" or user_input == "boucle pour":
                     
                         for i in range(3):
                             st.code(f"i = {i}")
-            if user_input == "repeter" or user_input == "tant que":
+                elif user_input == "repeter" or user_input == "tant que":
                     
                         st.code(5)
-            if user_input == "fonction":
+                elif user_input == "fonction":
                         st.code(2)
-            if user_input == "procedeur":
+                elif user_input == "procedeur":
                     
                         st.code("Python")
+                else:
+                      st.code("")
                 
                             
 
         else:
-            # Find the closest matching word
             closest_word, similarity_score = find_closest_word(user_input, algorithm_data)
             closest_word_exe, max_similarity_exe = get_example(user_input, definition)
             if closest_word and similarity_score or closest_word_exe and max_similarity_exe > 60 :  
@@ -194,9 +214,21 @@ def algortitheme():
                 st.warning("Algorithm not found. Please try a different input.")
     
 def main():
-    # Algorithm
-    
-    algortitheme()
+    st.title("Bienvenue sur Algorithme.ai")
+    Title="Dans le but de developper le raisonnement et la capacite de resolution des problemes chez l'apprenant,\nle domaine < Pensee computationnelle et programmation > met l'accent sur l'algorithmique.\nL'ecriture de l'algorithme doit respecter les conventions citees dans ce document."
+    st.write(Title)
+    st.write("---")
+    user_input = st.text_input("algorithm :")
+    if user_input == "" or  user_input == '                ' :
+        with st.chat_message("assistant" ):
+            st.write("bonjour, puis-je vous aider  aujourd'huit ?")
+            st.write("Vous pouvez rechercher n'importe quoi sur l'algorithme.")
+            st.write("You can search for `lire()` in Python, or you can search for `convch` in Python.")
+            st.write("This tool is free and unlimited.")
+            st.write("Alternatively, you can visit the website.[DevTunisian](https://devtunisian.netlify.app/)")
+    else:
+        algortitheme(user_input)
+               
     st.sidebar.title("New version:")
     st.sidebar.write(" 1 added : tableau avec sous programme")
     st.sidebar.write(" 2 added : boucle pour")
@@ -206,14 +238,13 @@ def main():
         
     
     st.sidebar.markdown("[Learn Qt Designer](#soon)")
-    st.write("Free Research Preview. [Algorithm.ai August 6 Version](#).")
-    st.write("---")
-    col1, col2 = st.columns([2, 5])
-    a = """<iframe src="https://trinket.io/embed/python/cb60355528?runMode=console" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>"""
-
-    st.markdown(a, unsafe_allow_html=True)
-    with col2:
     
+    st.write("---")
+    st.write(f" **{visitor(user)} Total Visits website.**")
+    st.write("Free Research Preview. [Algorithm.ai August 6 Version](#).")
+    col1, col2 = st.columns([2, 5])
+    with col2:
+
         st.write(":copyright:2023 by Algorithm.ai | DevTunisian")
 
     col4, col3 = st.sidebar.columns([3, 7])
@@ -229,6 +260,12 @@ def main():
         with c2:
             st.sidebar.markdown("[DevTunisian Web](https://devtunisian.netlify.app/)")
 
-
+    hide_st_style ="""
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {vidibility: hidden;}
+    header {visibility: hidden;}
+    </style>"""
+    st.markdown(hide_st_style, unsafe_allow_html=True)
 if __name__ == "__main__":
     main()
