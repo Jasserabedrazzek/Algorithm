@@ -88,7 +88,7 @@ def algortitheme(user_input):
                     st.write(f"Je recherche **`{user_input}`** en Python.")
                 result = algorithm_data["Algorithms"][user_input]
                 with st.chat_message('assistant'):
-                    st.write(f"Ok **`{user_input}`** en Python c'est **`{result}`** ")
+                    st.write(f"Ok. **`{user_input}`** en Python c'est : **`{result}`** ")
 
                     st.code(definition["Algorithms_exe"][user_input])
                     if Title["Algorithms_def"] != "":
