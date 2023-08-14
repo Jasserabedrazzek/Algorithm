@@ -179,7 +179,7 @@ def algortitheme(user_input):
                             st.write(f"[@Elios Academy](https://www.youtube.com/@EliosAcademy) : [PYTHON] - #Bac_3eme Qt Design ( partie {v + 1} )")
                             st.markdown(videos[v], unsafe_allow_html=True)
                             
-                            if st.button(f"**{l} :thumbsup:**"):
+                        if st.button(f"**{l} :thumbsup:**"):
                                  likes()
                                  
                 
