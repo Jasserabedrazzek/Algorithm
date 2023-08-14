@@ -88,7 +88,7 @@ def algortitheme(user_input):
                     st.write(f"Je recherche **`{user_input}`** en Python.")
                 result = algorithm_data["Algorithms"][user_input]
                 with st.chat_message('assistant'):
-                    st.write(f"Ok. **`{user_input}`** en Python c'est : **`{result}`** ")
+                    st.write(f"Ok. **`{user_input}`** en Python")
                     if Title["Algorithms_def"][user_input] != "":
                          st.write(f"**{result}**")
                          st.write(Title["Algorithms_def"][user_input])
@@ -105,7 +105,7 @@ def algortitheme(user_input):
                         st.code(19)
 
                     elif user_input == "arrondi()": 
-                        st.info("N.B. : En Python, si la partie fractionnaire est égale a 5, l'entier Pair le plus proche est retourne.")
+                        st.info("N.B. : En Python, si la partie fractionnaire est egale a 5, l'entier Pair le plus proche est retourne.")
                 
                     elif user_input == 'afficher':
                     
@@ -179,7 +179,7 @@ def algortitheme(user_input):
                             st.markdown(videos[v], unsafe_allow_html=True)
                             
                         if st.button(f"**{l} :thumbsup:**"):
-                                 likes()
+                                likes()
                                  
                 
                             
