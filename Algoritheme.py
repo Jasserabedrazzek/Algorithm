@@ -92,7 +92,7 @@ def algortitheme(user_input):
 
                     st.code(definition["Algorithms_exe"][user_input])
                     if Title["Algorithms_def"] != "":
-                         st.code(Title["Algorithms_def"][user_input])
+                         st.write(Title["Algorithms_def"][user_input])
                     else:
                          pass
                     st.write("**output**")
