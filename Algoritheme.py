@@ -79,7 +79,7 @@ def find_closest_word(user_input, algorithm_data):
     
 
 
-    
+l = likes()   
 
 def algortitheme(user_input):
         if user_input:
@@ -166,7 +166,7 @@ def algortitheme(user_input):
 
                         v = st.session_state.get('video_index', 0)
 
-                        l = likes()
+                        
                         if st.button("Previous Video"):
                             v = max(0, v - 1)
                             st.session_state.video_index = v
