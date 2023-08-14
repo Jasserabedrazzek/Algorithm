@@ -1,8 +1,8 @@
 {
     "Algorithms_def" : {
         "":"",
-        "lire()": "input(objet)"  ,
-        "ecrire()" : "print('commentaiure')"  ,
+        "lire()": ""  ,
+        "ecrire()" : ""  ,
         "<-" : "Objet1 et Objet2 doivent etre de meme type ou de types compatibles.",
         "alors" : "" ,
         "faire" : "" ,
