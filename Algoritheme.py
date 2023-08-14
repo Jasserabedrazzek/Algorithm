@@ -38,13 +38,15 @@ visitor(user)
 def likes():
     with open("Likes.json", "r") as usel:
         userl = json.load(usel)
-    num_like = userl['user_likes']
+    num_like = userl["user_likes"]
+    return num_like
     
+def add_likes():
+    num_like = likes()
     data_like = {"user_likes":num_like+1}
     with open("Likes.json", "w") as addl:
         json.dump(data_like, addl)
-    if userl["user_likes"] :
-        return userl["user_likes"] 
+    
 
 
 
@@ -200,7 +202,7 @@ def algortitheme(user_input):
                             st.markdown(videos[v], unsafe_allow_html=True)
                             
                         if st.button(f"**{l} :thumbsup:**"):
-                                likes()
+                                add_likes()
                                  
                 
                             
