@@ -88,74 +88,93 @@ def algortitheme(user_input):
                     st.write(f"Je recherche **`{user_input}`** en Python.")
                 result = algorithm_data["Algorithms"][user_input]
                 with st.chat_message('assistant'):
-                    st.write(f"Ok. **`{user_input}`** en Python")
+                    st.write(f"Ok. **`{user_input}`** en Python.")
                     if Title["Algorithms_def"][user_input] != "":
                          st.write(f"**{user_input}**")
                          st.write(Title["Algorithms_def"][user_input])
-                    st.code(f"En Python : {result}")
+                    if result != "":
+                        st.code(f"En Python : {result}")
                     st.code(definition["Algorithms_exe"][user_input])
                     
                     
-                    st.write("**output**")
+                    
                     if user_input == 'ecrire()':
-
+                            st.write("**output**")
                             st.code("Hello , World!")
                     elif user_input == '<-' :
-
+                            st.write("**output**")
                             st.code("19")
                     elif user_input == 'alors' or user_input == 'si' :
+                        st.write("**output**")
                         st.code(19)
 
                     elif user_input == "arrondi()": 
+                        st.write("**output**")
                         st.info("N.B. : En Python, si la partie fractionnaire est egale a 5, l'entier Pair le plus proche est retourne.")
                 
                     elif user_input == 'afficher':
+                            st.write("**output**")
                     
                             st.code("bacmath")
                     elif user_input == "racine":
+                        st.write("**output**")
                      
                         st.code(sqrt(16))
                     elif user_input == "alea":
+                        st.write("**output**")
                         rn5 = randint(1,10)
                       
                         st.code(rn5)
                     elif user_input == "long":
+                        st.write("**output**")
                     
                         st.code(len("Bac Math"))
                     elif user_input == "ou":
+                        st.write("**output**")
                     
                         st.code(True)
                     elif user_input == "pos":
+                            st.write("**output**")
                     
                             st.code('bac'.find('a'))
                     elif user_input == "effacer":
+                            st.write("**output**")
                     
                             st.code("bcmath") 
                     elif user_input == "sous chaine":
+                        st.write("**output**")
                     
                         st.code("bac math"[0:3])
                     elif user_input == "majus":
+                            st.write("**output**")
                     
                             st.code('bac'.upper())
                 
                     elif user_input == "pour" or user_input == "boucle pour":
+                        st.write("**output**")
                     
                         for i in range(3):
                             st.code(f"i = {i}")
                     elif user_input == "repeter" or user_input == "tant que":
+                        st.write("**output**")
                     
                         st.code(5)
                     elif user_input == "fonction":
+                        st.write("**output**")
                         st.code(2)
                     elif user_input == "procedeur":
+                        st.write("**output**")
                     
                         st.code("Python")
                     elif user_input == "hashtag":
+                        st.write("**output**")
                         im = Title["Algorithms_def"][user_input]
                         st.image(im)
-                    elif user_input == "fonction":  
+                    elif user_input == "fonction":
+                      st.write("**output**")  
                       st.code("def nom_fonction():\n\ttrait\n\treturn")
                     elif user_input == "procedeur":  
+                      st.write("**output**")
                       st.code("def nom_procedeur():\n\ttrait")
                 if user_input == "qt_designer":
                         videos = [
