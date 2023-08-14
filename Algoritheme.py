@@ -90,7 +90,7 @@ def algortitheme(user_input):
                 with st.chat_message('assistant'):
                     st.write(f"Ok. **`{user_input}`** en Python")
                     if Title["Algorithms_def"][user_input] != "":
-                         st.write(f"**{result}**")
+                         st.write(f"**{user_input}**")
                          st.write(Title["Algorithms_def"][user_input])
                     st.code(definition["Algorithms_exe"][user_input])
                     
