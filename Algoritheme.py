@@ -89,13 +89,11 @@ def algortitheme(user_input):
                 result = algorithm_data["Algorithms"][user_input]
                 with st.chat_message('assistant'):
                     st.write(f"Ok. **`{user_input}`** en Python c'est : **`{result}`** ")
-
-                    st.code(definition["Algorithms_exe"][user_input])
                     if Title["Algorithms_def"][user_input] != "":
-                         st.write("**def**")
+                         st.write(f"**{result}**")
                          st.write(Title["Algorithms_def"][user_input])
-                    else:
-                         pass
+                    st.code(definition["Algorithms_exe"][user_input])
+                    
                     st.write("**output**")
                     if user_input == 'ecrire()':
 
