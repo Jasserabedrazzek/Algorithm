@@ -156,7 +156,7 @@ def algortitheme(user_input):
                       st.code("def nom_fonction():\n\ttrait\n\treturn")
                     elif user_input == "procedeur":  
                       st.code("def nom_procedeur():\n\ttrait")
-                    elif user_input == "qt_designer":
+                if user_input == "qt_designer":
                         videos = [
                             '<iframe width="100%" height="441" src="https://www.youtube.com/embed/T3MBb85n_hY?list=PLY-quDF0nYMwWO89XXjfZDxB4fKUlS073" title="e.com/embed/Bi-cg-2OqBg?list=PLY[PYTHON] - #Bac_3eme  Qt Design (Partie 1)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
                             '<iframe width="100%" height="441" src="https://www.youtube.com/embed/Bi-cg-2OqBg?list=PLY-quDF0nYMwWO89XXjfZDxB4fKUlS073" title="[PYTHON] - #Bac_3eme  Qt design ( partie 2 )" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
