@@ -1,5 +1,6 @@
 {
     "Algorithms" : {
+        "":"",
         "lire()": "input()"  ,
         "ecrire()" : "print()"  ,
         "<-" : "=",
@@ -16,7 +17,6 @@
         "faux" : "False",
         "vrai" : "True",
         "texte" : "" ,
-        "": "",
         "None":"",
         "div" :"//",
         "mod" : "%" ,
@@ -47,13 +47,15 @@
         "repeter": "while condition:\n\ttrait ",
         "tant que" : "while condition:\n\ttrait ",
         "jusqu'a" : "",
-        "fonction" : "def nom_fonction():\n\ttrait\n\treturn",
+        "fonction" : "def",
         "retourner" : "return",
-        "procedeur" : "def nom_procedeur():\ntrait",
-        "tableau avec sous programme" :"look example ",
+        "procedeur" : "def",
+        "tableau avec sous programme" :"",
         "sous programme" : "fonction ou procedeur"
         ,
-        "hashtag":"click 'alt gr + 3'"
-        
+        "hashtag":"click 'alt gr + 3'",
+        "ord()":"ord(ca)",
+        "chr()":"chr(X)",
+        "qt_designer": ""
     }
 }

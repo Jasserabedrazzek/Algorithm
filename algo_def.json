@@ -1,5 +1,6 @@
 {
     "Algorithms_exe": {
+        "":"",
         "lire()": "#exe:\na = input('exemple: ')\n#output\n#exemple: ",
         "ecrire()": "#exe:\nprint('Hello , World!')\n#output Hello , World!",
         "<-": "#exe:\nnum = 19",
@@ -16,7 +17,6 @@
         "faux": "#exe:\nres = False\nprint(res)",
         "vrai": "#exe:\nres = True\nprint(res)",
         "texte": "",
-        "": "",
         "faire" : ":",
         "None": "",
         "different": "!=",
@@ -53,6 +53,9 @@
         "procedeur": "#exe:\ndef pro():\n    print('Python')",
         "tableau avec sous programme" :  "#exe:\nimport numpy as np\n#procedeurs \ndef saisir(): # procedeur \n\tglobal n\n\tn = int(input('Enter the size of the array (1 to 5): '))\ndef remplir():# procedeur\n\tglobal n , T\n\tT = np.array([int] * n)   # n entier\n\tfor i in range(n): # pour remplir le tableau\n\t\tT[i] = int(input(f'Enter element [{i}]: '))\ndef affiche():# procedeur\n\tglobal n , T\n\tfor j in range(n):\n\t\tprint(T[j])  # pour affiche les elements dans le tableau\n \n#pp\nsaisir()\nremplir()\naffiche()\n",
         "sous programme" : "def",
-        "hashtag":"#"
+        "hashtag":"#",
+        "ord()":"#exe:\nN = ord(a)\nprint(N)\n# N =97",
+        "chr()":"#exe:\nca = chr(90)\nprint(ca)\n# ca = 'Z'",
+        "qt_designer": "Elios Academy en youtube.com. Il y'a 4 videos Qt designer"
     }
 }
