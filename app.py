@@ -1,5 +1,4 @@
 import streamlit as st
-from sympy import *
 
 st.set_page_config(page_title='Elena - DevTunisian',
                    page_icon='',
